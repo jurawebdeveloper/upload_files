@@ -1,4 +1,4 @@
-<?php include "uploadArquivos.php";?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -15,10 +15,11 @@
     <body>
       <div class="container">
         <h1 class="text-center">Formulário de Upload de Arquivos</h1>
-        <?php if ($msg != false) echo "<div class=\"alert $class\" role=\"alert\">$msg</div>"; ?>
+        
  
-        <form name="form" action="" method="post" enctype="multipart/form-data">
-           <input type="hidden" name="enviou" value="1">
+        <form name="form" action="uploadArquivos.php" method="post" enctype="multipart/form-data">
+        <input type="text" name="name" >   <br><br>
+        <input type="hidden" name="enviou" value="1">
            Arquivo PDF:<br>
            <input type="file" name="arquivo">
            <br><br>
