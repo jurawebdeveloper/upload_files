@@ -1,7 +1,10 @@
-<?php 
+<?php
+date_default_timezone_set('America/Sao_Paulo');
+$date = date('d_m_y_H_i');
+//print_r($date); exit; 
 include "funcoes.php";
 $nome = ($_POST['name']);
-//print_r($nome); exit; 
+//
 
 $msg = false;
 
@@ -36,7 +39,7 @@ if( isset($_POST['enviou']) && $_POST['enviou'] == 1 ){
  
                 // atribui novo nome ao arquivo
                 //$novo_nome  = md5(time()).".".$extensao;
-                $novo_nome  = $nome.".".$extensao;
+                $novo_nome  = $nome."_".$date.".".$extensao;
  
                 // faz o upload
                 $enviou = move_uploaded_file($_FILES['arquivo']['tmp_name'], $diretorio.$novo_nome);
